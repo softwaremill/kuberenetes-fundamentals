@@ -1,0 +1,13 @@
+<configuration>
+    <property name="GENERAL_LOG_LEVEL" value="${GENERAL_LOG_LEVEL:-INFO}" />
+    <property name="APPLICATION_LOG_LEVEL" value="${APPLICATION_LOG_LEVEL:-INFO}" />
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%-5level] %logger{36} [%thread] - %X{persistenceId} %msg%n%xException</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.softwaremill" level="${APPLICATION_LOG_LEVEL}"/>
+    <root level="${GENERAL_LOG_LEVEL}">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

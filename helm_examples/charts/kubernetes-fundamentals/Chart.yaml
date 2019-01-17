@@ -1,0 +1,10 @@
+apiVersion: v1
+description: SoftwareMill example Helm chart
+keywords:
+  - example
+  - backend
+  - devel
+name: kubernetes-fundamentals
+sources: 
+  - https://github.com/softwaremill/kuberenetes-fundamentals
+version: 0.1

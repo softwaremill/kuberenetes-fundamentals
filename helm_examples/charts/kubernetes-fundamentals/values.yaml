@@ -1,0 +1,11 @@
+replicaCount: 1
+image:
+  name: kubernetes-fundamentals
+  version: minikube
+  pullPolicy: IfNotPresent
+service:
+  name: tcp
+  type: NodePort
+  externalPort: 30005
+  internalPort: 8000
+resources: {}

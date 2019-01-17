@@ -1,0 +1,12 @@
+apiVersion: v1
+metadata:
+  name: test-config
+data:
+  test1.properties: |
+    propertyA=valueA
+    propertyB=valueB
+  test2.properties: |
+    {
+     "key": "value"
+    }
+kind: ConfigMap

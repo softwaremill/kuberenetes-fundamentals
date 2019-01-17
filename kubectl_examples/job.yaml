@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: box
+spec:
+  template:
+    spec:
+      containers:
+      - name: box
+        image: busbox
+        command: ["sleep",  "10"]
+      restartPolicy: Never
+  backoffLimit: 5
