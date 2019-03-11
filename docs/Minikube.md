@@ -12,7 +12,7 @@ Do not forget about completion. Add `source <(minikube completion <shell>)` to r
 
 ## Docker handling
 
-There is a possibility to treat local docker repository as a minikube repository i.e. set docker environmental variables by running `eval $(minikube docker-env)`
+There is a possibility to treat minikube as a local docker machine i.e. set docker environmental variables by running `eval $(minikube docker-env)`
 
 ## Exercise
 

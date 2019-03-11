@@ -4,6 +4,20 @@ The best place for helm commands reference is the official [documentation](https
 
 Do not forget about completion. Add `source <(helm completion <shell>)` to relevant shell configuration file.
 
+## Helm installation
+
+Minikube by default uses RBAC so the helm installation needs a seriviceaccount with required access rights.
+
+To install helm:
+Create service account and cluster role binding (BEWARE - to simplify things this example uses ClusterAdmin role).
+```bash
+kubectl apply -f helm-installation/helm-rbac.yaml
+```
+Install helm on k8s with created serviceaccount:
+```bash
+helm init --service-account tiller
+```
+
 ## Helm chart structure
 
 ```
@@ -29,8 +43,8 @@ More chart examples can be found on the [helm/charts](https://github.com/helm/ch
 1. To list all configured repositories use `helm repo list`.
 1. To show the release history use `helm history` e.g. `helm history example-application-backend`.
 1. To delete the release and preserve the its name use `helm del`. To clear also the release name to be able to reuse it invoke `helm del --purge`
-1. Each helm chart should be packaged before deployment using `helm package` command.
-
+1. Each helm chart can be packaged before deployment using `helm package` command.
+1. You can use local repo by starting http server: `helm serve` or install local charts just using the chart path.
 ### Installing and upgrading
 
 Installing from a local, packaged chart
