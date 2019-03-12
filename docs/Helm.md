@@ -6,7 +6,7 @@ Do not forget about completion. Add `source <(helm completion <shell>)` to relev
 
 ## Helm installation
 
-Minikube by default uses RBAC so the helm installation needs a seriviceaccount with required access rights.
+Minikube by default uses [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) so the helm installation needs a seriviceaccount with required access rights.
 
 To install helm:
 Create service account and cluster role binding (BEWARE - to simplify things this example uses ClusterAdmin role).
@@ -45,6 +45,7 @@ More chart examples can be found on the [helm/charts](https://github.com/helm/ch
 1. To delete the release and preserve the its name use `helm del`. To clear also the release name to be able to reuse it invoke `helm del --purge`
 1. Each helm chart can be packaged before deployment using `helm package` command.
 1. You can use local repo by starting http server: `helm serve` or install local charts just using the chart path.
+
 ### Installing and upgrading
 
 Installing from a local, packaged chart

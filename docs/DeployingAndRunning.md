@@ -15,9 +15,10 @@ It will automatically recognize your shell and use commands specific to it.
 
 ## Building docker image
 
+The example application uses [sbt-native-packager](https://github.com/sbt/sbt-native-packager) sbt plugin to build and publish docker image. 
 To build example application docker image run:
 ```bash
-sbt docker:PublishLocal
+sbt docker:publishLocal
 ```
 
 It will complile the app and create the docker image on docker machine (minikube in this case).
@@ -28,7 +29,6 @@ Run helm command:
 ```bash
 helm upgrade \
 --install app \
---wait \
 helm-examples/charts/kubernetes-fundamentals
 ```
 
