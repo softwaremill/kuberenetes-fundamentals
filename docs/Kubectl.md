@@ -25,7 +25,7 @@ Use `-w` to wait for changes in the fetched resources list e.g. `kubectl get po 
 ## Handling objects
 
 1. To show the definition of a k8s primitive utilize `kubectl explain` eg. `kubectl explain services`
-1. To create a pod using a managed docker images use `kubectl run nginx --image=nginx`
+1. To create a pod using a managed docker images use `kubectl run nginx --image=nginx`.  Behind the scenes this command creates a doployment.
 1. To create an object using a file use `kubectl create -f` or `kubectl apply -f` e.g. `kubectl apply -f ./kubectl_examples/simple_pod.yaml`.
 1. To delete an object utilize `kubectl delete` e.g. `kubectl delete pod nginx-65899c769f-8xw76` or `kubectl delete -f ./kubectl_examples/simple_pod.yaml`
 1. To update a resource utilize `kubectl edit`, patch the image or explicitly change chosen attributes `kubectl set image` e.g ` kubectl set image deployment/nginx busybox=busybox nginx=nginx:1.9.1`. Note that only the shorthand commands are pleasant to use.
