@@ -72,7 +72,8 @@ You can think of it as a flavour of a deployment but which will span across the 
 
 ### Ingresses
 
-In simple words an ingress is an API object. It is used to expose and control access to all resources that you configure for your cluster. Using ingresses is the preferable way of enabling external access to your cluster, in contrary to NodePorts or forwarding. To use this object on minikube you have to install an addon: `minikube addons enable ingress`.
+Ingress, added in Kubernetes v1.1, exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. It's a L7 proxy and loadbalancer. It can also terminate SSL, adds name-based virtual hosting and manipulate http paths (for example rewrite `/` to `/service`).
+To use this object on minikube you have to install an addon: `minikube addons enable ingress`.
 
 ## Storage
 
